@@ -1,0 +1,98 @@
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+
+.tt-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 2px;
+  position: relative;
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+[data-theme="light"] .tt-track {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.tt-track--dark {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .tt-track--dark {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.tt-knob {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  top: 2px;
+  left: 2px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.tt-track--dark .tt-knob {
+  transform: translateX(20px);
+}
+
+.tt-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.tt-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.tt-icon--sun {
+  color: var(--text-muted);
+  margin-left: 1px;
+}
+
+.tt-track--dark .tt-icon--sun {
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.tt-icon--moon {
+  color: var(--text-muted);
+  margin-left: auto;
+  margin-right: 1px;
+}
+
+.tt-track--dark .tt-icon--moon {
+  color: var(--text);
+  opacity: 1;
+}
+
+.tt-track:not(.tt-track--dark) .tt-icon--moon {
+  opacity: 0.4;
+}
+
+.theme-toggle:hover .tt-knob {
+  box-shadow: 0 1px 8px rgba(196, 122, 155, 0.3);
+}

@@ -1,0 +1,407 @@
+/* ═══════════════════════════════════════
+   EXPERIENCE — Growing / Journal Cards
+   Compact, elegant, paper-like
+   ═══════════════════════════════════════ */
+.experience {
+  padding: 140px clamp(24px, 5vw, 80px);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 40% 35% at 75% 20%, var(--gold-muted), transparent 50%),
+    radial-gradient(ellipse 30% 30% at 25% 80%, var(--accent-muted), transparent 50%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.exp-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.exp-glow-1 {
+  width: 400px;
+  height: 400px;
+  right: -100px;
+  top: 10%;
+  background: radial-gradient(circle, var(--gold-muted), transparent 70%);
+  opacity: 0.6;
+}
+
+.exp-glow-2 {
+  width: 300px;
+  height: 300px;
+  left: -80px;
+  bottom: 10%;
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+  opacity: 0.5;
+}
+
+.exp-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Stack ─── */
+.exp-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ═══════════════════════════════════════
+   CARD — Compact Paper Journal
+   ═══════════════════════════════════════ */
+.exp-card {
+  position: relative;
+  width: 88%;
+  border-radius: 16px;
+  cursor: default;
+  background: linear-gradient(
+    170deg,
+    rgba(255, 252, 243, 0.065) 0%,
+    rgba(255, 248, 235, 0.035) 50%,
+    rgba(255, 245, 228, 0.055) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 4px solid var(--gold);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    1px 2px 6px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  overflow: visible;
+}
+
+.exp-card:nth-child(2) { border-left-color: var(--sage); }
+.exp-card:nth-child(3) { border-left-color: var(--accent); }
+
+/* Paper ruling lines */
+.exp-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 26px,
+      rgba(196, 122, 155, 0.03) 26px,
+      rgba(196, 122, 155, 0.03) 27px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Paper red margin line */
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  width: 1px;
+  background: rgba(196, 122, 155, 0.06);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hover: paper lifts */
+.exp-card--open {
+  transform: translateY(-2px);
+  box-shadow:
+    2px 4px 14px rgba(0, 0, 0, 0.16),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.exp-card--open::before {
+  background: rgba(196, 122, 155, 0.12);
+}
+
+.exp-card--open {
+  border-left-color: var(--gold) !important;
+}
+
+.exp-card:nth-child(2).exp-card--open { border-left-color: var(--sage) !important; }
+.exp-card:nth-child(3).exp-card--open { border-left-color: var(--accent) !important; }
+
+/* ─── Tape — masking tape overlapping top edge ─── */
+.exp-tape {
+  position: absolute;
+  top: -8px;
+  left: 18px;
+  width: 54px;
+  height: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(210, 190, 150, 0.32) 0%,
+    rgba(200, 180, 140, 0.22) 50%,
+    rgba(210, 190, 150, 0.28) 100%
+  );
+  border: none;
+  border-radius: 1px;
+  transform: rotate(-4deg);
+  z-index: 10;
+  pointer-events: none;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+  transform-origin: left center;
+}
+
+.exp-card--open .exp-tape {
+  transform: rotate(-2deg);
+  top: -7px;
+}
+
+.exp-tape::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.06) 2px,
+    rgba(255, 255, 255, 0.06) 3px
+  );
+  border-radius: inherit;
+}
+
+/* ─── Clip wrapper — drives expand animation ─── */
+.exp-card-clip {
+  overflow: hidden;
+}
+
+/* ─── Inner content — compact padding ─── */
+.exp-card-inner {
+  padding: 22px 30px 20px;
+  will-change: height;
+  transition: height 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Rows ─── */
+.exp-row {
+  margin-bottom: 0;
+}
+
+/* Title row */
+.exp-row--title {
+  margin-bottom: 4px;
+}
+
+.exp-role {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+/* Meta row */
+.exp-row--meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.exp-company {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.exp-sep {
+  color: var(--text-muted);
+  opacity: 0.35;
+  font-size: 0.7rem;
+}
+
+.exp-location {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.exp-date-badge {
+  display: inline-block;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.64rem;
+  font-weight: 500;
+  color: var(--gold);
+  padding: 2px 9px;
+  background: var(--gold-muted);
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.3px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ─── Divider ─── */
+.exp-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(196, 122, 155, 0.12) 15%,
+    rgba(184, 150, 90, 0.08) 85%,
+    transparent 100%
+  );
+  margin: 10px 0;
+}
+
+/* ─── Description — 2 line clamp ─── */
+.exp-desc {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.exp-card--open .exp-desc {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/* ─── Tags ─── */
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.exp-tags--extra {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.exp-tag {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: var(--tag-text);
+  background: var(--gold-muted);
+  border: 1px solid rgba(184, 150, 90, 0.1);
+  padding: 3px 10px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.exp-card:nth-child(2) .exp-tag {
+  background: var(--sage-muted);
+  border-color: rgba(107, 138, 122, 0.1);
+}
+
+.exp-card:nth-child(3) .exp-tag {
+  background: var(--accent-muted);
+  border-color: rgba(196, 122, 155, 0.1);
+}
+
+.exp-tag--more {
+  color: var(--text-muted);
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--border);
+}
+
+.exp-card--open .exp-tag {
+  background: var(--accent-muted);
+  border-color: var(--card-border-hover);
+  color: var(--text);
+}
+
+.exp-card--open .exp-tag:nth-child(even) {
+  background: var(--gold-muted);
+}
+
+.exp-card--open .exp-tag:nth-child(3n) {
+  background: var(--sage-muted);
+}
+
+/* ─── Expanded content ─── */
+.exp-extra {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.05s;
+}
+
+.exp-extra--open {
+  opacity: 1;
+}
+
+.exp-lesson {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exp-label {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.exp-lesson-text {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .exp-inner {
+    margin: 0;
+  }
+
+  .exp-card {
+    width: 100%;
+  }
+
+  .exp-card-inner {
+    padding: 18px 20px 16px;
+  }
+
+  .exp-role {
+    font-size: 1.2rem;
+  }
+
+  .exp-stack {
+    gap: 36px;
+  }
+
+  .exp-tape {
+    left: 10px;
+  }
+
+  .exp-card::before {
+    left: 32px;
+  }
+}

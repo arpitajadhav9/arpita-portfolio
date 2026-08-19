@@ -1,0 +1,196 @@
+/* ═══════════════════════════════════════
+   SKILLS — Experimenting / Abstract / Playful
+   Sage accent, organic curves, fluid layout
+   ═══════════════════════════════════════ */
+.skills {
+  padding: 140px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Abstract organic background */
+.skills::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 30% 40% at 10% 30%, var(--sage-muted), transparent 50%),
+    radial-gradient(ellipse 25% 35% at 90% 60%, var(--accent-muted), transparent 50%),
+    radial-gradient(ellipse 20% 20% at 50% 80%, var(--gold-muted), transparent 50%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.skills-grid-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  opacity: 0.7;
+}
+
+.skills-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--sage);
+  border-radius: 24px;
+  padding: 28px 24px;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cocoon glow — soft light pooling inside each card */
+.skill-card::after {
+  content: '';
+  position: absolute;
+  top: -45%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78%;
+  height: 75%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, var(--sage-muted), transparent 70%);
+  opacity: 0.45;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.12);
+}
+
+.skill-card:nth-child(2) { border-left-color: var(--accent); }
+.skill-card:nth-child(3) { border-left-color: var(--gold); }
+.skill-card:nth-child(4) { border-left-color: var(--sage); }
+
+/* Wing-inspired gradient top border on hover */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--wing-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skill-card:hover::before {
+  transform: scaleX(1);
+}
+
+.skill-card:hover {
+  border-color: var(--card-border-hover);
+  background: var(--card-bg-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.sk-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.sk-head::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 30px;
+  height: 1px;
+  background: var(--sage);
+  transition: width 0.4s ease;
+}
+
+.skill-card:hover .sk-head::after {
+  width: 50px;
+}
+
+.sk-icon {
+  color: var(--sage);
+  display: flex;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover .sk-icon {
+  color: var(--accent);
+}
+
+.sk-category {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.sk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sk-tag {
+  font-size: 0.8rem;
+  color: var(--tag-text);
+  background: var(--sage-muted);
+  border: 1px solid rgba(107, 138, 122, 0.15);
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skill-card:nth-child(2) .sk-tag {
+  background: var(--accent-muted);
+  border-color: rgba(196, 122, 155, 0.12);
+}
+
+.skill-card:nth-child(3) .sk-tag {
+  background: var(--gold-muted);
+  border-color: rgba(184, 150, 90, 0.12);
+}
+
+.skill-card:nth-child(4) .sk-tag {
+  background: var(--sage-muted);
+  border-color: rgba(107, 138, 122, 0.12);
+}
+
+.skill-card:hover .sk-tag {
+  border-color: var(--card-border-hover);
+  color: var(--text);
+}
+
+.skill-card:hover .sk-tag:nth-child(even) {
+  background: var(--sage-muted);
+}
+
+.skill-card:hover .sk-tag:nth-child(3n) {
+  background: var(--gold-muted);
+}

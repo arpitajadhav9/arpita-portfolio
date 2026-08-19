@@ -1,0 +1,63 @@
+/* ═══════════════════════════════════════
+   CHAPTER HEADER — Compact Label with Subtitle
+   Left-aligned with proper container padding
+   ═══════════════════════════════════════ */
+.chapter {
+  padding: 0 0 32px;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.chapter-number {
+  display: block;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  transition: color 0.4s ease;
+}
+
+.chapter--gold .chapter-number { color: var(--gold); }
+.chapter--sage .chapter-number { color: var(--sage); }
+.chapter--accent .chapter-number { color: var(--accent); }
+
+.chapter-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--heading-color);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  transition: color 0.4s ease;
+}
+
+.chapter--gold .chapter-title { color: var(--gold); }
+.chapter--sage .chapter-title { color: var(--sage); }
+.chapter--accent .chapter-title { color: var(--accent); }
+
+.chapter-subtitle {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 600px) {
+  .chapter {
+    padding: 0 0 24px;
+  }
+
+  .chapter-title {
+    font-size: 1.5rem;
+  }
+
+  .chapter-subtitle {
+    font-size: 0.9rem;
+  }
+}
