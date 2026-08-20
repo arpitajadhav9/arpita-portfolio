@@ -106,8 +106,8 @@ function Navbar() {
             </button>
           ))}
           <ThemeToggle />
-          <a href={`mailto:${personal.email}`} className="hire-btn">
-            Hire Me
+          <a href="/Arpita_Jadhav_Resume.pdf" download className="resume-btn">
+            Resume
           </a>
         </div>
 
@@ -144,10 +144,11 @@ function Navbar() {
               </button>
             ))}
             <a
-              href={`mailto:${personal.email}`}
-              className="hire-btn mobile-hire"
+              href="/Arpita_Jadhav_Resume.pdf"
+              download
+              className="resume-btn mobile-resume"
             >
-              Hire Me
+              Resume
             </a>
           </motion.div>
         )}

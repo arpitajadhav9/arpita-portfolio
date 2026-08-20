@@ -11,7 +11,7 @@
 
 .chapter-number {
   display: block;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 3px;
@@ -26,7 +26,7 @@
 .chapter--accent .chapter-number { color: var(--accent); }
 
 .chapter-title {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: -0.5px;
@@ -41,7 +41,7 @@
 .chapter--accent .chapter-title { color: var(--accent); }
 
 .chapter-subtitle {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.5;

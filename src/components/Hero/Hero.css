@@ -213,7 +213,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.22em;
@@ -232,7 +231,7 @@
 }
 
 .hero-name-first {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: clamp(3.2rem, 7vw, 5.5rem);
   font-weight: 600;
   line-height: 1.05;
@@ -251,7 +250,6 @@
 }
 
 .hero-role-item {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.15em;
@@ -269,7 +267,6 @@
 
 /* Intro */
 .hero-intro {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -288,7 +285,7 @@
 }
 
 .hero-sentence-prefix {
-  font-family: "SF Mono", "SFMono-Regular", ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: clamp(1rem, 1.8vw, 1.2rem);
   color: var(--accent);
   font-weight: 500;
@@ -297,7 +294,7 @@
 }
 
 .hero-sentence {
-  font-family: "SF Mono", "SFMono-Regular", ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: clamp(0.9rem, 1.6vw, 1.1rem);
   color: var(--text-secondary);
   opacity: 0.9;
@@ -349,7 +346,6 @@
   height: 44px;
   padding: 0 28px;
   border-radius: 10px;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--bg);
@@ -373,7 +369,6 @@
   height: 44px;
   padding: 0 28px;
   border-radius: 10px;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-secondary);

@@ -206,7 +206,7 @@
 }
 
 .exp-role {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 1.45rem;
   font-weight: 600;
   color: var(--heading-color);
@@ -224,7 +224,7 @@
 }
 
 .exp-company {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -237,14 +237,14 @@
 }
 
 .exp-location {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.74rem;
   color: var(--text-muted);
 }
 
 .exp-date-badge {
   display: inline-block;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.64rem;
   font-weight: 500;
   color: var(--gold);
@@ -273,7 +273,7 @@
 
 /* ─── Description — 2 line clamp ─── */
 .exp-desc {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   color: var(--text-secondary);
   font-size: 0.82rem;
   line-height: 1.6;
@@ -301,7 +301,7 @@
 }
 
 .exp-tag {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.66rem;
   font-weight: 500;
   color: var(--tag-text);
@@ -361,7 +361,7 @@
 }
 
 .exp-label {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 1.8px;
@@ -370,7 +370,7 @@
 }
 
 .exp-lesson-text {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.82rem;
   font-style: italic;
   color: var(--text-secondary);
