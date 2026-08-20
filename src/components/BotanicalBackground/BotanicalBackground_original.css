@@ -1,0 +1,137 @@
+. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+/* ═══════════════════════════════════════
+   BOTANICAL BACKGROUND
+   Subtle organic branches, leaves, flowers
+   Fixed layer behind all content
+   ═══════════════════════════════════════ */
+
+.botanical-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ─── Individual SVG groups positioned per section zone ─── */
+.botanical-group {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Section zone positioning */
+.botanical-group--hero {
+  top: 0;
+  height: 100vh;
+}
+
+.botanical-group--learning {
+  top: 100vh;
+  height: 100vh;
+}
+
+.botanical-group--growing {
+  top: 200vh;
+  height: 100vh;
+}
+
+.botanical-group--experimenting {
+  top: 300vh;
+  height: 100vh;
+}
+
+.botanical-group--building {
+  top: 400vh;
+  height: 100vh;
+}
+
+.botanical-group--transforming {
+  top: 500vh;
+  height: 100vh;
+}
+
+/* ─── SVG element styling ─── */
+.botanical-branch {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.botanical-leaf {
+  stroke: none;
+  transform-origin: center center;
+}
+
+.botanical-leaf-stroke {
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* ─── Depth blur classes ─── */
+.botanical-depth-near {
+  filter: blur(0px);
+}
+
+.botanical-depth-mid {
+  filter: blur(0.8px);
+}
+
+.botanical-depth-far {
+  filter: blur(1.8px);
+}
+
+/* ─── Branch draw-in animation ─── */
+.botanical-branch--animate {
+  stroke-dasharray: 1 0;
+  will-change: stroke-dashoffset;
+}
+
+/* ─── Subtle sway animation for leaves and branches ─── */
+@keyframes botanicalSway {
+  0%, 100% { transform: rotate(0deg) translateX(0); }
+  25% { transform: rotate(0.3deg) translateX(1px); }
+  50% { transform: rotate(-0.2deg) translateX(-0.5px); }
+  75% { transform: rotate(0.25deg) translateX(0.5px); }
+}
+
+.botanical-sway {
+  animation: botanicalSway 20s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.botanical-sway--alt {
+  animation: botanicalSway 25s ease-in-out infinite reverse;
+  transform-origin: top right;
+}
+
+/* ─── Branch gentle pulse after draw ─── */
+@keyframes branchPulse {
+  0%, 100% { strokeOpacity: inherit; }
+  50% { strokeOpacity: calc(inherit * 1.3); }
+}
+
+.botanical-branch--pulse {
+  animation: branchPulse 8s ease-in-out infinite;
+}
+
+/* ─── Leaf float ─── */
+@keyframes leafFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-2px) rotate(0.5deg); }
+}
+
+.botanical-leaf--float {
+  animation: leafFloat 12s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .botanical-sway,
+  .botanical-sway--alt,
+  .botanical-branch--pulse,
+  .botanical-leaf--float {
+    animation: none;
+  }
+}

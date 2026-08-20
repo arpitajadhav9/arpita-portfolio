@@ -3,6 +3,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { personal, social } from "../../data/portfolio";
 import ChapterHeader from "../ChapterHeader/ChapterHeader";
 import { ButterflyStage } from "../Metamorphosis/Metamorphosis";
+import { ContactBackground } from "../BotanicalBackground/BotanicalBackground";
 import "./Contact.css";
 
 function Contact() {
@@ -15,6 +16,7 @@ function Contact() {
 
   return (
     <section className="contact" id="contact">
+      <ContactBackground />
       <ChapterHeader
         number="V."
         title="Transforming"
@@ -25,7 +27,7 @@ function Contact() {
       <div className="contact-glow contact-glow-1" />
 
       <div className="contact-inner">
-        <ButterflyStage className="meta--contact" caption="stage 05 · flight" />
+        <ButterflyStage className="meta--contact" />
 
         <h2 className="contact-heading">Let&apos;s connect</h2>
         <p className="contact-sub">Have a project in mind or just want to say hi?</p>

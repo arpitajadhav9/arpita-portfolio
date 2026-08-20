@@ -12,6 +12,7 @@ import { HiArrowDown } from "react-icons/hi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { personal, social } from "../../data/portfolio";
 import HeroSentence from "./HeroSentence";
+import { HeroBackground } from "../BotanicalBackground/BotanicalBackground";
 import "./Hero.css";
 
 function useParallax(mouseX, mouseY, range, stiffness) {
@@ -172,6 +173,8 @@ function Hero() {
 
   return (
     <section className="hero" id="hero">
+      <HeroBackground />
+
       {!reduced && (
         <motion.div
           className="hero-cursor-glow"
