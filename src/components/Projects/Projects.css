@@ -2,7 +2,7 @@
    PROJECTS — Building / Technical / Structured
    ═══════════════════════════════════════ */
 .projects {
-  padding: 140px 24px;
+  padding: 140px clamp(24px, 5vw, 80px);
   position: relative;
   overflow: hidden;
 }
@@ -606,9 +606,21 @@
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
+  .projects {
+    padding: 100px clamp(20px, 5vw, 40px) 100px clamp(20px, 5vw, 32px);
+  }
+
   .projects-grid-cards {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .project-card {
+    padding: 20px 18px;
+  }
+
+  .pc-title {
+    font-size: 1.1rem;
   }
 
   .project-modal-overlay {
@@ -658,5 +670,19 @@
   .pm-btn {
     padding: 8px 14px;
     font-size: 0.7rem;
+  }
+
+  .pm-sec-text {
+    font-size: 0.76rem;
+  }
+
+  .pm-feature-item {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 80px 16px 80px 16px;
   }
 }

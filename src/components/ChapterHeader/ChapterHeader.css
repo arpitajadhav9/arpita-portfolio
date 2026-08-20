@@ -53,11 +53,26 @@
     padding: 0 0 24px;
   }
 
+  .chapter-number {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+  }
+
   .chapter-title {
     font-size: 1.5rem;
   }
 
   .chapter-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chapter {
+    padding: 0 0 20px;
+  }
+
+  .chapter-title {
+    font-size: 1.3rem;
   }
 }

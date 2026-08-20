@@ -379,31 +379,114 @@
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
+  .experience {
+    padding: 100px clamp(20px, 5vw, 40px) 100px clamp(20px, 5vw, 32px);
+  }
+
   .exp-inner {
     margin: 0;
   }
 
   .exp-card {
     width: 100%;
+    border-radius: 16px;
   }
 
   .exp-card-inner {
-    padding: 18px 20px 16px;
+    padding: 14px 16px 12px;
   }
 
   .exp-role {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
+    letter-spacing: -0.2px;
+  }
+
+  .exp-company {
+    font-size: 0.72rem;
+  }
+
+  .exp-location {
+    font-size: 0.68rem;
+  }
+
+  .exp-date-badge {
+    font-size: 0.58rem;
+    padding: 2px 7px;
   }
 
   .exp-stack {
-    gap: 36px;
+    gap: 28px;
   }
 
   .exp-tape {
     left: 10px;
+    width: 52px;
+    height: 17px;
+    top: -9px;
   }
 
   .exp-card::before {
-    left: 32px;
+    left: 28px;
+  }
+
+  .exp-divider {
+    margin: 7px 0;
+  }
+
+  .exp-desc {
+    font-size: 0.74rem;
+    line-height: 1.5;
+  }
+
+  .exp-tag {
+    font-size: 0.58rem;
+    padding: 2px 7px;
+  }
+
+  .exp-label {
+    font-size: 0.55rem;
+  }
+
+  .exp-lesson-text {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    padding: 80px 16px 80px 16px;
+  }
+
+  .exp-card-inner {
+    padding: 12px 14px 10px;
+  }
+
+  .exp-role {
+    font-size: 0.95rem;
+  }
+
+  .exp-card::before {
+    left: 22px;
+  }
+
+  .exp-tape {
+    left: 6px;
+    width: 44px;
+    height: 15px;
+    top: -8px;
+    transform: rotate(-3deg);
+  }
+
+  .exp-stack {
+    gap: 22px;
+  }
+
+  .exp-desc {
+    font-size: 0.7rem;
+  }
+
+  .exp-tag {
+    font-size: 0.54rem;
+    padding: 2px 6px;
   }
 }
