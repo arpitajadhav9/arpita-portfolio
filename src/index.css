@@ -127,6 +127,13 @@ html {
 /* ═══════════════════════════════════════
    GLOBAL STYLES
    ═══════════════════════════════════════ */
+
+:root {
+  --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "SFMono-Regular", ui-monospace, monospace;
+}
+
 html {
   background: var(--bg);
 }
@@ -135,7 +142,7 @@ body {
   background: var(--bg);
   cursor: none;
   color: var(--text);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
@@ -160,7 +167,7 @@ button { font-family: inherit; }
 }
 
 h1, h2, h3, h4 {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-serif);
   text-wrap: balance;
   color: var(--heading-color);
 }

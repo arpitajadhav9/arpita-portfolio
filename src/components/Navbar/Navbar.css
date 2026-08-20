@@ -93,7 +93,7 @@
 }
 
 .nav-num {
-  font-family: "SF Mono", "SFMono-Regular", ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 600;
   opacity: 0.6;
@@ -107,7 +107,7 @@
   font-weight: 500;
 }
 
-.hire-btn {
+.resume-btn {
   background: var(--accent);
   color: var(--skip-color);
   text-decoration: none;
@@ -118,7 +118,7 @@
   transition: all 0.3s;
 }
 
-.hire-btn:hover {
+.resume-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 20px var(--accent-glow);
 }
@@ -169,13 +169,13 @@
 }
 
 .mobile-link-num {
-  font-family: "SF Mono", "SFMono-Regular", ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--accent);
   opacity: 0.7;
 }
 
-.mobile-hire {
+.mobile-resume {
   text-align: center;
   margin-top: 6px;
 }
@@ -185,7 +185,7 @@
     display: none;
   }
 
-  .navbar-container .hire-btn {
+  .navbar-container .resume-btn {
     display: none;
   }
 

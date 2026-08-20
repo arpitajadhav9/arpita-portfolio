@@ -148,7 +148,7 @@
   line-height: 1;
   margin-bottom: 8px;
   opacity: 0.5;
-  font-family: Georgia, serif;
+  font-family: var(--font-serif);
 }
 
 .about-personal-text {
