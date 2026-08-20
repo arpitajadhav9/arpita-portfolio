@@ -384,15 +384,47 @@
 
 @media (max-width: 900px) {
   .meta--stage {
-    display: none;
+    width: 100px;
+    right: clamp(4px, 2vw, 16px);
+    top: 16px;
+    opacity: 0.7;
+  }
+
+  .meta--stage::before {
+    height: 24px;
+    top: calc(100% + 8px);
   }
 
   .meta--contact {
-    width: clamp(120px, 22vw, 150px);
+    width: clamp(80px, 20vw, 120px);
+    margin-bottom: 4px;
   }
 
   .meta-caption {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .meta--stage {
+    width: 80px;
+    right: 2px;
+    top: 12px;
+    opacity: 0.55;
+  }
+
+  .meta--stage::before {
+    height: 18px;
+    top: calc(100% + 4px);
+  }
+
+  .meta--contact {
+    width: clamp(60px, 22vw, 100px);
+  }
+
+  .meta-glow {
+    filter: blur(16px);
+    inset: -12%;
   }
 }
 

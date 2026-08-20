@@ -192,6 +192,11 @@ p { text-wrap: pretty; }
 
 img { max-width: 100%; display: block; }
 
+/* Mobile: restore default cursor */
+@media (pointer: coarse) {
+  body { cursor: auto; }
+}
+
 /* ─── Section Badge (refined) ─── */
 .section-badge {
   display: inline-block;
@@ -331,6 +336,19 @@ img { max-width: 100%; display: block; }
 @media (max-width: 600px) {
   .section-header h2 {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 1.7rem;
+    letter-spacing: -0.5px;
+  }
+
+  .section-badge {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    padding: 5px 12px;
   }
 }
 

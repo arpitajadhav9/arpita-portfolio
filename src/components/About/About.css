@@ -159,8 +159,35 @@
 }
 
 @media (max-width: 768px) {
+  .about {
+    padding: 100px clamp(20px, 5vw, 40px) 100px clamp(20px, 5vw, 32px);
+  }
+
   .about-layout {
     flex-direction: column;
     gap: 24px;
+  }
+
+  .about-greeting {
+    font-size: 1.35rem;
+  }
+
+  .about-body {
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .about-personal-text {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 80px 16px 80px 16px;
+  }
+
+  .about-greeting {
+    font-size: 1.2rem;
   }
 }

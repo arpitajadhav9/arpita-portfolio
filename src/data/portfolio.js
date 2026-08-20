@@ -14,11 +14,11 @@ export const personal = {
     "I'm continuously learning and improving.",
   ],
   heroNote:
-    "3rd-year B.Tech CSE • Mumbai, India • 2023 – 2027",
+    "Final-year B.Tech CSE • Mumbai, India • 2023 – 2027",
   tagline:
     "Designing, building and exploring better products",
   description:
-    "3rd-year Computer Science Engineering undergraduate with strong foundations in data structures, algorithms, and full-stack development (MERN, Python/Flask). Built projects spanning graph-based pathfinding, AI-integrated web platforms (Gemini API), and MERN trading tools, and uses AI coding assistants (GitHub Copilot, ChatGPT) regularly to speed up development, debugging and testing.\n\nBrings hands-on UI/UX and product experience from internships at Engaze and LetsUpgrade, with a growing focus on backend systems and APIs. Eager to contribute to a fast-paced, technically rigorous engineering team.",
+    "Final-year Computer Science Engineering undergraduate with strong foundations in data structures, algorithms, and full-stack development (MERN, Python/Flask). Built projects spanning graph-based pathfinding, AI-integrated web platforms (Gemini API), and MERN trading tools, and uses AI coding assistants (GitHub Copilot, ChatGPT) regularly to speed up development, debugging and testing.\n\nBrings hands-on UI/UX and product experience from internships at Engaze and LetsUpgrade, with a growing focus on backend systems and APIs. Eager to contribute to a fast-paced, technically rigorous engineering team.",
   personalNote:
     "Outside of work, you'll probably find me sketching wireframes on paper that never make it to Figma, reading about behavioural psychology, or trying a new cafe and rating their matcha. I believe great design comes from curiosity — and a good playlist helps.",
   roles: [
@@ -40,7 +40,7 @@ export const education = [
     degree: "B.Tech – Computer Science Engineering",
     school: "ITM Skills University",
     period: "2023 – 2027",
-    note: "3rd Year",
+    note: "Final Year",
   },
   {
     degree: "Higher Secondary (12th)",

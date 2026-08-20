@@ -46,3 +46,44 @@
   animation: crumbFall 0.8s linear infinite;
   transform-origin: center;
 }
+
+/* Mobile vertical crawler */
+.mobile-crawler {
+  position: fixed;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-crawler-svg {
+  width: 42px;
+  height: auto;
+  max-height: 55vh;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .journey-branch-wrapper {
+    right: 8px;
+    width: 85px;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-branch-wrapper {
+    right: 4px;
+    width: 70px;
+  }
+
+  .mobile-crawler {
+    right: 2px;
+  }
+
+  .mobile-crawler-svg {
+    width: 36px;
+  }
+}
