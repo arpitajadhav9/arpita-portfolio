@@ -8,6 +8,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.home-wrapper {
+  position: relative;
+  width: 100%;
+}
+
 /* ═══════════════════════════════════════
    DARK THEME (default)
    ═══════════════════════════════════════ */
@@ -372,3 +377,71 @@ img { max-width: 100%; display: block; }
 .reveal-delay-2 { animation-delay: 0.2s; }
 .reveal-delay-3 { animation-delay: 0.3s; }
 .reveal-delay-4 { animation-delay: 0.4s; }
+
+/* ═══════════════════════════════════════
+   PREMIUM DOUBLE BEZEL & GLARE CARDS
+   ═══════════════════════════════════════ */
+
+.card-double-bezel {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 28px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+[data-theme="light"] .card-double-bezel {
+  background: rgba(0, 0, 0, 0.01);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
+
+.card-double-bezel:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--accent-hover);
+  box-shadow: var(--card-shadow-hover);
+}
+
+[data-theme="light"] .card-double-bezel:hover {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: var(--accent);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.inner-core {
+  position: relative;
+  flex: 1;
+  border-radius: 22px; /* Concentric radius: outer 28px - padding 6px */
+  overflow: hidden;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border) !important;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  padding: 28px 24px;
+}
+
+.card-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 255, 255, 0.09) 0%,
+    transparent 60%
+  );
+  opacity: var(--glare-opacity, 0);
+  transition: opacity 0.4s ease;
+}
+
+[data-theme="light"] .card-glare {
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 65%
+  );
+}

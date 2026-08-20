@@ -62,8 +62,8 @@
    ═══════════════════════════════════════ */
 .exp-card {
   position: relative;
-  width: 88%;
-  border-radius: 16px;
+  width: 100%;
+  border-radius: 20px;
   cursor: default;
   background: linear-gradient(
     170deg,
@@ -82,8 +82,8 @@
   overflow: visible;
 }
 
-.exp-card:nth-child(2) { border-left-color: var(--sage); }
-.exp-card:nth-child(3) { border-left-color: var(--accent); }
+.exp-card-wrapper:nth-child(2) .exp-card { border-left-color: var(--sage); }
+.exp-card-wrapper:nth-child(3) .exp-card { border-left-color: var(--accent); }
 
 /* Paper ruling lines */
 .exp-card::after {
@@ -133,50 +133,52 @@
   border-left-color: var(--gold) !important;
 }
 
-.exp-card:nth-child(2).exp-card--open { border-left-color: var(--sage) !important; }
-.exp-card:nth-child(3).exp-card--open { border-left-color: var(--accent) !important; }
+.exp-card-wrapper:nth-child(2) .exp-card--open { border-left-color: var(--sage) !important; }
+.exp-card-wrapper:nth-child(3) .exp-card--open { border-left-color: var(--accent) !important; }
 
 /* ─── Tape — masking tape overlapping top edge ─── */
 .exp-tape {
   position: absolute;
-  top: -8px;
-  left: 18px;
-  width: 54px;
-  height: 20px;
+  top: -11px;
+  left: 24px;
+  width: 70px;
+  height: 22px;
   background: linear-gradient(
-    135deg,
-    rgba(210, 190, 150, 0.32) 0%,
-    rgba(200, 180, 140, 0.22) 50%,
-    rgba(210, 190, 150, 0.28) 100%
+    90deg,
+    rgba(225, 205, 155, 0.5) 0%,
+    rgba(235, 218, 175, 0.4) 40%,
+    rgba(225, 205, 155, 0.45) 60%,
+    rgba(235, 218, 175, 0.5) 100%
   );
-  border: none;
-  border-radius: 1px;
-  transform: rotate(-4deg);
-  z-index: 10;
+  /* Jagged, hand-torn edges on left and right sides */
+  clip-path: polygon(
+    0% 0%, 100% 0%,
+    97% 10%, 100% 20%, 96% 30%, 99% 40%, 95% 50%, 99% 60%, 96% 70%, 100% 80%, 97% 90%, 100% 100%,
+    0% 100%,
+    3% 90%, 0% 80%, 4% 70%, 1% 60%, 5% 50%, 1% 40%, 4% 30%, 0% 20%, 3% 10%
+  );
+  transform: rotate(-3.5deg);
+  z-index: 12;
   pointer-events: none;
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.12),
-    inset 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   transform-origin: left center;
+  transition: transform 0.3s ease, top 0.3s ease;
 }
 
 .exp-card--open .exp-tape {
-  transform: rotate(-2deg);
-  top: -7px;
+  transform: rotate(-1.5deg);
+  top: -9px;
 }
 
 .exp-tape::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 2px,
-    rgba(255, 255, 255, 0.06) 2px,
-    rgba(255, 255, 255, 0.06) 3px
-  );
-  border-radius: inherit;
+  background-image: 
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 4px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 4px);
+  mix-blend-mode: overlay;
+  opacity: 0.75;
 }
 
 /* ─── Clip wrapper — drives expand animation ─── */
@@ -310,12 +312,12 @@
   transition: all 0.25s ease;
 }
 
-.exp-card:nth-child(2) .exp-tag {
+.exp-card-wrapper:nth-child(2) .exp-tag {
   background: var(--sage-muted);
   border-color: rgba(107, 138, 122, 0.1);
 }
 
-.exp-card:nth-child(3) .exp-tag {
+.exp-card-wrapper:nth-child(3) .exp-tag {
   background: var(--accent-muted);
   border-color: rgba(196, 122, 155, 0.1);
 }

@@ -98,6 +98,27 @@ function CaterpillarStage({ className = "", caption }) {
   );
 }
 
+function SleepingBranch({ className = "", caption }) {
+  return (
+    <Scene className={className} caption={caption} float={false}>
+      <svg viewBox="0 0 400 300" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="sleepingLeafGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="var(--sage)" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="var(--sage)" stopOpacity="0.35" />
+          </linearGradient>
+        </defs>
+        {/* branch */}
+        <path d="M -10 240 C 90 220 240 244 410 214" stroke="var(--gold)" strokeOpacity="0.3" strokeWidth="13" strokeLinecap="round" />
+        <path d="M -10 234 C 90 216 240 238 410 208" stroke="var(--accent)" strokeOpacity="0.35" strokeWidth="2.5" strokeLinecap="round" />
+        {/* small leaf on branch */}
+        <path d="M 74 224 C 54 190 30 176 18 192 C 30 210 54 222 74 224 Z" fill="url(#sleepingLeafGrad)" />
+        <path d="M 74 224 C 56 210 42 196 26 194" stroke="var(--sage)" strokeOpacity="0.4" strokeWidth="0.8" fill="none" />
+      </svg>
+    </Scene>
+  );
+}
+
 /* ═════════════════════════════════════════
    STAGE 02 — Devouring (About)
    ═════════════════════════════════════════ */
@@ -140,8 +161,7 @@ function EatingStage({ className = "", caption }) {
         <circle cx="226" cy="196" r="1.8" className="crumb" style={{ animationDelay: "0.25s" }} />
         <circle cx="226" cy="196" r="2" className="crumb" style={{ animationDelay: "0.5s" }} />
 
-        {/* caterpillar munching */}
-        <CaterpillarBody pose="eating" transform="translate(212 204)" />
+        {/* caterpillar removed per request — branch + leaf kept */}
       </svg>
     </Scene>
   );
@@ -351,6 +371,7 @@ function ButterflyStage({ className = "", caption }) {
 export {
   Scene,
   CaterpillarStage,
+  SleepingBranch,
   EatingStage,
   PupatingStage,
   CocoonStage,
